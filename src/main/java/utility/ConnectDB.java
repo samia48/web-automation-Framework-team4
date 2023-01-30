@@ -16,8 +16,8 @@ public class ConnectDB {
     public static Connection connectToSqlDatabase() {
         String driverClass = Utility.getProperties().getProperty("MYSQLJDBC.driver");
         String url = Utility.getProperties().getProperty("MYSQLJDBC.url");
-        String userName = Utility.getProperties().getProperty("MYSQLJDBC.userName");
-        String password = Utility.getProperties().getProperty("MYSQLJDBC.password");
+        String userName = Utility.getProperties().getProperty("MYSQLJDBC.userName1");
+        String password = Utility.getProperties().getProperty("MYSQLJDBC.password1");
         try {
             Class.forName(driverClass);
             connect = DriverManager.getConnection(url,userName,password);
@@ -28,15 +28,7 @@ public class ConnectDB {
         return connect;
     }
 
-    public static MongoDatabase mongoDatabase = null;
 
-    public MongoDatabase connectToMongoDB() {
-        MongoClient mongoClient = new MongoClient("" , 27017);
-        mongoDatabase = mongoClient.getDatabase("");
-        System.out.println("Database Connected");
-
-        return mongoDatabase;
-    }
 
     public static List<String> getTableColumnData(String query, String columnName) {
         List<String> list = new ArrayList<>();
