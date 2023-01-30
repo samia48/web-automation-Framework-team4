@@ -1,4 +1,4 @@
 package com.Scaledupit.test;
 
-public class test1 {
+public class TestShoppingCart {
 }
