@@ -33,6 +33,9 @@ public class LoginPageScaledupit extends CommonAPI {
     @FindBy(xpath = "(//input[@name='_wp_http_referer']//preceding::button)[2]")
     WebElement LoginButton;
 
+    @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
+    WebElement ErrorMessage;
+
     @FindBy(xpath = "//button[@name='register']")
     WebElement RegisterButton;
 
@@ -64,6 +67,16 @@ public class LoginPageScaledupit extends CommonAPI {
         clickOn(RegisterButton);
         LOG.info("click Login button success");
     }
+
+    public String getErrorMessage(){
+        return getTextFromElement(ErrorMessage);
+
+    }
+    public void typePassword(String PassWord){
+        type(passwordField, PassWord);
+        LOG.info("type Password success");
+    }
+
 
 }
 

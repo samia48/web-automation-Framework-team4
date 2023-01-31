@@ -2,6 +2,7 @@ package com.Scaledupit.test;
 
 import base.CommonAPI;
 import com.Scaledupit.pages.HomePageScaledupit;
+import com.Scaledupit.pages.SearhPageScaledupit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -16,9 +17,13 @@ public class TestSearch extends CommonAPI {
             HomePageScaledupit homePage = new HomePageScaledupit(getDriver());
             homePage.typeItemToSearch("shirt");
             homePage.clickOnSearchButton();
+
             String title = getCurrentTitle();
             Assert.assertEquals(title, "Search Results for “shirt” – Automation");
             LOG.info("shirt search title validation success");
+            SearhPageScaledupit searhPageScaledupit  = new SearhPageScaledupit(getDriver());
+            searhPageScaledupit.clickOnShirtButton();
+
         }
 
     }

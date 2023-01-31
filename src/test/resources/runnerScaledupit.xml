@@ -15,6 +15,7 @@
             <class name="com.Scaledupit.test.TestLogin"></class>
             <class name="com.Scaledupit.test.TestRegister"></class>
             <class name="com.Scaledupit.test.TestSearch"></class>
+            <class name="com.Scaledupit.test.TestShopping"></class>
         </classes>
     </test>
 </suite>
