@@ -12,8 +12,9 @@ import utility.ConnectDB;
 public class TestLogin extends CommonAPI {
 
     Logger LOG = LogManager.getLogger(com.Scaledupit.test.TestLogin.class.getName());
+
     @Test
-    public void testlogin() {
+    public void testloginvalidcredential() {
         HomePageScaledupit homePage = new HomePageScaledupit(getDriver());
         LoginPageScaledupit loginPage = new LoginPageScaledupit(getDriver());
         homePage.clickOnMyAccountButton();
@@ -26,6 +27,26 @@ public class TestLogin extends CommonAPI {
         loginPage.clickOnLoginButton();
         LOG.info("login success");
     }
+
+    @Test
+    public void testloginInvalidemail() throws InterruptedException {
+        HomePageScaledupit homePage = new HomePageScaledupit(getDriver());
+        LoginPageScaledupit loginPage = new LoginPageScaledupit(getDriver());
+        homePage.clickOnMyAccountButton();
+
+        String title = getCurrentTitle();
+        Assert.assertEquals(title, "My account – Automation");
+        LOG.info("login title page validation success");
+        loginPage.typeusername("baruamousumi@aol");
+        loginPage.typepassword("asd1245");
+        loginPage.clickOnLoginButton();
+        String error = loginPage.getErrorMessage();
+        Assert.assertEquals(error, "Error: The username baruamousumi@aol is not registered on this site. If you are unsure of your username, try your email address instead.");
+        LOG.info("error message validation success");
+
+    }
+
+
 
 
 }
