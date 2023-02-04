@@ -30,6 +30,9 @@ public class CreatenewAccountPageMagento extends CommonAPI {
     @FindBy(xpath = "(//div[@class='primary']//preceding-sibling::button)[1]")
     WebElement createanAccountButton;
 
+    @FindBy(id = "email_address-error")
+    WebElement errorMessage;
+
 
 
 
@@ -58,6 +61,11 @@ public class CreatenewAccountPageMagento extends CommonAPI {
     public void clickOnCreateanAccountButton(){
         clickOn(createanAccountButton);
         LOG.info("click create account button success");
+    }
+    public String getErrorMessage(){
+
+        return getTextFromElement(errorMessage);
+
     }
 
 }

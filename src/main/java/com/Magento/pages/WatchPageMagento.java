@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class WatchPageMagento extends CommonAPI {
-    Logger LOG = LogManager.getLogger(SigninPageMagento.class.getName());
+    Logger LOG = LogManager.getLogger(WatchPageMagento.class.getName());
     public WatchPageMagento(WebDriver driver){
         PageFactory.initElements(driver, this);
     }

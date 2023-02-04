@@ -20,10 +20,29 @@ public class WayfarerMessengerBagPageMagento extends CommonAPI {
 
     @FindBy(xpath = "//button[@id='product-addtocart-button']")
     WebElement addToCartButton;
+    @FindBy(xpath = "//a[@class='action showcart']")
+    WebElement CartButton;
+    @FindBy(css = "#top-cart-btn-checkout")
+    WebElement proceedeToCheckOutButton;
+    @FindBy(xpath = "//a[@class='action delete']")
+    WebElement removeButton;
 
 
     public void clickOnAddToCartButton(){
         clickOn(addToCartButton);
         LOG.info("click add to cart button success");
     }
+    public void clickOnCartButton(){
+        clickOn(CartButton);
+        LOG.info("click add to cart button success");
+    }
+    public void clickOnProceedToCheckOutButton(){
+        clickOn(proceedeToCheckOutButton);
+        LOG.info("click proceede To Check Out Button success");
+    }
+    public void clickOnRemovetButton(){
+        clickOn(removeButton);
+        LOG.info("click remove button success");
+    }
+
 }
