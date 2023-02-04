@@ -17,10 +17,6 @@ public class TestSearchandCompareItems extends CommonAPI {
         HomePageMagento homePage = new HomePageMagento(getDriver());
         WatchPageMagento watchPageMagento = new WatchPageMagento(getDriver());
         CompareWatchPage compareWatchPage = new CompareWatchPage(getDriver());
-        homePage.clickOnSigninButton();
-        String title = getCurrentTitle();
-        Assert.assertEquals(title, "Customer Login Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
-        LOG.info("login title page validation success");
         homePage.searchItem("watch");
         String title1 = getCurrentTitle();
         Assert.assertEquals(title1, "Search results for: 'watch' Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");

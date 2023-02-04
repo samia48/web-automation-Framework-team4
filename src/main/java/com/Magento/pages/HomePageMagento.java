@@ -25,15 +25,24 @@ public class HomePageMagento extends CommonAPI {
     @FindBy(xpath = "(//li[@class='authorization-link']//preceding-sibling::a)[1]")
     WebElement signinButton;
 
+    @FindBy(xpath = "(//span[text()='Welcome, samia iddir!'])[1]")
+    WebElement headerText;
+
     @FindBy(xpath = "(//li[@class='authorization-link']//following::li/a)[1]")
     WebElement createanAccountButton;
 
 
-    @FindBy(xpath = "")
-    WebElement floatingMenu;
+    @FindBy(xpath = "//a[@class='action showcart']")
+    WebElement cartButton;
+    @FindBy(xpath = "//span[text()='Gear']")
+    WebElement gearFloatingMenu;
 
-    @FindBy(css = "")
-    WebElement menuDropdown;
+    @FindBy(xpath = "//span[text()='Fitness Equipment']")
+    WebElement fitnessEquipment;
+    @FindBy (xpath = "//span[text()='Sale']")
+    WebElement saleButton;
+
+
 
     //reusable steps
     public void typeItemToSearch(String item){
@@ -53,18 +62,36 @@ public class HomePageMagento extends CommonAPI {
         clickOn(signinButton);
         LOG.info("click on signin button success");
     }
+    public void clickOnCartButton(){
+        clickOn(cartButton);
+        LOG.info("click on cart button success");
+    }
+
+    public void clickOnAddToCartButton(WebDriver driver){
+        clickWithActions(driver, cartButton);
+        LOG.info("click cart button success");
+    }
     public void clickOnCreateanAccountButton(){
         clickOn(createanAccountButton);
         LOG.info("click signin button success");
     }
-
-    public void selectOptionFromMenuDropdown(String option){
-        selectOptionFromDropdown(menuDropdown, option);
-        LOG.info(option+" option selected from the dropdown");
-    }
     public void hoverOverFloatingMenu(WebDriver driver){
-        hoverOver(driver, floatingMenu);
-        LOG.info("hover over menu success");
+        hoverOver(driver, gearFloatingMenu);
+        LOG.info("Gear hover over menu success");
+    }
+    public void clickOnFitnessEquipment(){
+        clickOn(fitnessEquipment);
+        LOG.info("click fitness Equipment success");
+    }
+
+    public void ClickOnSaleButton(){
+        clickOn(saleButton);
+        LOG.info("click fitness Equipment success");
+    }
+
+    public String getHeaderText(){
+
+        return getTextFromElement(headerText);
     }
 
 }
