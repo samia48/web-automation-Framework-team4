@@ -7,12 +7,14 @@ import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class InvalidEmailErrorMessageTest extends CommonAPI {
-    Logger LOG = LogManager.getLogger(LoginTest.class.getName());
 
+
+
+public class LogOutTest extends CommonAPI {
+    Logger LOG = LogManager.getLogger(LogOutTest.class.getName());
 
     @Test
-    public void invalidEmailAddress() {
+    public void LogOutButtonVerifyTest() throws InterruptedException  {
         LoginPage loginPage = new LoginPage(getDriver());
         //String email = ConnectDB.getTableColumnData("select * from cred","password").get(0);
 
@@ -20,14 +22,17 @@ public class InvalidEmailErrorMessageTest extends CommonAPI {
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");
+        Thread.sleep(3000);
 
-        loginPage.typeEmailAddress("abc@j@gmail.com");
-        loginPage.typePassword("TestAccount1@");
+        loginPage.typeEmailAddress("tsrahman28@gmail.com");
+        loginPage.typePassword("Testaccount1@");
         loginPage.clickOnLoginButton();
+        Thread.sleep(3000);
 
-        String error = loginPage.getErrorMessage();
-        Assert.assertEquals(error, "Something went wrong...");
-        LOG.info("error message validation success");
+        loginPage.clickOnSettingsIcon();
+        Thread.sleep(3000);
+        loginPage.clickOnLogOutButton();
+        Thread.sleep(3000);
 
     }
 }
