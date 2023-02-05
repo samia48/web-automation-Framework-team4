@@ -16,6 +16,7 @@ public class FetchLeftMenuTest extends CommonAPI {
         LoginPage loginPage = new LoginPage(getDriver());
         //String email = ConnectDB.getTableColumnData("select * from cred","password").get(0);
 
+        loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");

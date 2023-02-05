@@ -9,15 +9,23 @@
     <parameter name="browserVersion" value="100"></parameter>
 
     <parameter name="browserName" value="chrome"></parameter>
-    <parameter name="url" value="https://ui.cogmento.com/?lang=en-GB"></parameter>
+   <!--<parameter name="url" value="https://ui.cogmento.com/?lang=en-GB"></parameter>-->
+
+    <parameter name="url" value="https://freecrm.com/"></parameter>
     <test name="FreeCRM tests">
         <classes>
-            <class name="com.FreeCRM.test.LoginTest"></class>
+          <class name="com.FreeCRM.test.LoginTest"></class>
             <class name="com.FreeCRM.test.BlankUsernameAndPasswordTest"></class>
-            <class name="com.FreeCRM.test.InvalidEmailErrorMessageTest"></class>
-            <class name="com.FreeCRM.test.InvalidPasswordErrorMessageTest"></class>
-            <class name="com.FreeCRM.test.FetchLeftMenuTest"></class>
-
+              <class name="com.FreeCRM.test.InvalidEmailErrorMessageTest"></class>
+              <class name="com.FreeCRM.test.InvalidPasswordErrorMessageTest"></class>
+              <class name="com.FreeCRM.test.FetchLeftMenuTest"></class>
+              <class name="com.FreeCRM.test.LogOutTest"></class>
+              <class name="com.FreeCRM.test.SearchTest"></class>
+            <class name="com.FreeCRM.test.DropDownMenuTest"></class>
+            <class name="com.FreeCRM.test.TrashIconTest"></class>
+            <class name="com.FreeCRM.test.CreateNewContactTest"></class>
+            <class name="com.FreeCRM.test.CreateNewCompanyTest"></class>
+            <class name="com.FreeCRM.test.ReturnToHomePageTest"></class>
         </classes>
     </test>
 </suite>

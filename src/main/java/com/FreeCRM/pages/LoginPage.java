@@ -43,9 +43,16 @@ public class LoginPage extends CommonAPI {
     WebElement searchField;
 
 
+    @FindBy(xpath = "//a[contains(text(),'Log In')]")
+    WebElement loginBtn;
 
 
     //reusable methods
+
+    public void clickOnLoginBtn(){
+        clickOn(loginBtn);
+        LOG.info("click login btn success");
+    }
     public void typeEmailAddress(String emailAddress){
         type(emailField, emailAddress);
         LOG.info("type email address success");
@@ -75,7 +82,7 @@ public class LoginPage extends CommonAPI {
         LOG.info("click log out button success");
     }
 
-    /*public void clickOnTrashIcon(){
+    public void clickOnTrashIcon(){
         clickOn(trashIcon);
         LOG.info("click trash icon success");
     }
@@ -93,6 +100,10 @@ public class LoginPage extends CommonAPI {
     public void searchItem(String item){
         typeAndEnter(searchField, item);
         LOG.info("item name type and enter success");
-    }*/
+    }
 
+    /*public void ClickOnDropDown(){
+        clickOn(dropDownMenu);
+        LOG.info("click on dropdown menu success");
+    }*/
 }
