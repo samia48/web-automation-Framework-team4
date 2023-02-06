@@ -8,14 +8,17 @@
     <parameter name="osVersion" value="10"></parameter>
     <parameter name="browserVersion" value="100"></parameter>
 
-    <parameter name="browserName" value="firefox"></parameter>
+    <parameter name="browserName" value="chrome"></parameter>
     <parameter name="url" value="https://automation.scaledupit.com/"></parameter>
     <test name="scaledupit test">
         <classes>
-            <class name="com.Scaledupit.test.TestLogin"></class>
+           <class name="com.Scaledupit.test.TestLogin"></class>
             <class name="com.Scaledupit.test.TestRegister"></class>
             <class name="com.Scaledupit.test.TestSearch"></class>
-            <class name="com.Scaledupit.test.TestShopping"></class>
+            <class name="com.Scaledupit.test.TestShoppingFromMenu"></class>
+            <class name="com.Scaledupit.test.TestShoppingFromHomePage"></class>
+            <class name="com.Scaledupit.test.ShoppingByCategories"></class>
+            <class name="com.Scaledupit.test.TestAddReview"></class>
         </classes>
     </test>
 </suite>

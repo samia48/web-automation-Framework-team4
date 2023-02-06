@@ -16,8 +16,8 @@ public class ConnectDB {
     public static Connection connectToSqlDatabase() {
         String driverClass = Utility.getProperties().getProperty("MYSQLJDBC.driver");
         String url = Utility.getProperties().getProperty("MYSQLJDBC.url");
-        String userName = Utility.getProperties().getProperty("MYSQLJDBC.userName1");
-        String password = Utility.getProperties().getProperty("MYSQLJDBC.password1");
+        String userName = Utility.getProperties().getProperty("MYSQLJDBC.userName");
+        String password = Utility.getProperties().getProperty("MYSQLJDBC.password");
         try {
             Class.forName(driverClass);
             connect = DriverManager.getConnection(url,userName,password);
