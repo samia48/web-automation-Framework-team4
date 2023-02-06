@@ -38,6 +38,8 @@ public class LoginPageScaledupit extends CommonAPI {
 
     @FindBy(xpath = "//button[@name='register']")
     WebElement RegisterButton;
+    @FindBy(xpath = "//span[text()='Home']")
+    WebElement homeButton;
 
     //reusable methods
     public void typeusername(String username){
@@ -70,11 +72,16 @@ public class LoginPageScaledupit extends CommonAPI {
 
     public String getErrorMessage(){
         return getTextFromElement(ErrorMessage);
+        //LOG.info("error message success");
 
     }
-    public void typePassword(String PassWord){
-        type(passwordField, PassWord);
-        LOG.info("type Password success");
+    //public void typePassword(String PassWord){
+       // type(passwordField, PassWord);
+       // LOG.info("type Password success");
+    //}
+    public void clickOnHomeButton(){
+        clickOn(homeButton);
+        LOG.info("click Home button success");
     }
 
 

@@ -19,6 +19,8 @@ public class BillingPage extends CommonAPI {
 
     @FindBy(xpath = "//ul[@class='wc_payment_methods payment_methods methods']")
     WebElement InfoMessage;
+    @FindBy(css = "#place_order")
+    WebElement placeOrderButton;
 
     //reusable methods
 
@@ -27,5 +29,9 @@ public class BillingPage extends CommonAPI {
         return getTextFromElement(InfoMessage);
 
     }
+    public void clickOnPlaceOrderButton() {
+        clickOn(placeOrderButton);
+        LOG.info("click on Place Order button success");
 
+    }
 }

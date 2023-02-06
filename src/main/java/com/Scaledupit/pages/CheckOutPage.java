@@ -12,21 +12,33 @@ public class CheckOutPage extends CommonAPI {
 
     Logger LOG = LogManager.getLogger(CheckOutPage.class.getName());
 
-    public CheckOutPage(WebDriver driver){
+    public CheckOutPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
     //objects
 
-    @FindBy(xpath = "//div[@class='wc-proceed-to-checkout']")
-    WebElement ProceedToCheckoutButton;
+    @FindBy(xpath = "//ul[@class='wc_payment_methods payment_methods methods']")
+    WebElement InfoMessage;
+    @FindBy(css = "#place_order")
+    WebElement placeOrderButton;
 
     //reusable methods
 
-    public void clickOnProceedToCheckoutButton(){
-        clickOn(ProceedToCheckoutButton);
-        LOG.info("click on Proceed To Checkout button success");
+    public String getInfoMessage(){
+
+        return getTextFromElement(InfoMessage);
+
+    }
+    public void clickOnPlaceOrderButton() {
+        clickOn(placeOrderButton);
+        LOG.info("click on Place Order button success");
 
     }
 
 }
+
+
+
+
+
