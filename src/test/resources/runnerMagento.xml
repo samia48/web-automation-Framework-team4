@@ -12,10 +12,11 @@
     <parameter name="url" value="https://magento.softwaretestingboard.com/"></parameter>
     <test name="magento test">
         <classes>
-             <class name="com.Magento.test.TestSignin"></class>
+            <class name="com.Magento.test.TestSignin"></class>
             <class name="com.Magento.test.TestCreateNewAccount"></class>
-            <class name="com.Magento.test.TestSearchandCompareItems"></class>
-           <class name="com.Magento.test.TestCheckOutShoppingCart"></class>
+            <class name="com.Magento.test.TestCheckOutCompareList"></class>
+            <class name="com.Magento.test.TestCheckOutShoppingCart"></class>
+            <class name="com.Magento.test.TestSearch"></class>
         </classes>
     </test>
 </suite>

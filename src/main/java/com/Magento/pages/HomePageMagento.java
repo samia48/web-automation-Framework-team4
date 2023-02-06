@@ -42,6 +42,9 @@ public class HomePageMagento extends CommonAPI {
     @FindBy (xpath = "//span[text()='Sale']")
     WebElement saleButton;
 
+    @FindBy (xpath = "//a[@class='action compare']")
+    WebElement compareProductsButton;
+
 
 
     //reusable steps
@@ -73,7 +76,7 @@ public class HomePageMagento extends CommonAPI {
     }
     public void clickOnCreateanAccountButton(){
         clickOn(createanAccountButton);
-        LOG.info("click signin button success");
+        LOG.info("click create an account button success");
     }
     public void hoverOverFloatingMenu(WebDriver driver){
         hoverOver(driver, gearFloatingMenu);
@@ -86,12 +89,18 @@ public class HomePageMagento extends CommonAPI {
 
     public void ClickOnSaleButton(){
         clickOn(saleButton);
-        LOG.info("click fitness Equipment success");
+        LOG.info("click Sale button success");
     }
 
     public String getHeaderText(){
 
         return getTextFromElement(headerText);
     }
+
+    public void ClickOnCompareProductsButton(){
+        clickOn(compareProductsButton);
+        LOG.info("click compare Products Button success");
+    }
+
 
 }
