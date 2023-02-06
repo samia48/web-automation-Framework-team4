@@ -17,6 +17,12 @@ public class CompareWatchPage extends CommonAPI {
 
     @FindBy(xpath = "(//button[@class='action tocart primary'])[1]")
     WebElement AddtoCartButton;
+    @FindBy(xpath = "//button[@class='action-primary action-accept']")
+    WebElement OkButton;
+
+
+    @FindBy(xpath = "(//a[@class='action delete'])[3]")
+    WebElement removeProductButton;
 
 
     //reusable methods
@@ -26,5 +32,17 @@ public class CompareWatchPage extends CommonAPI {
         clickOn(AddtoCartButton);
         LOG.info("click on add to cart button success");
     }
+    public void clickOnRemoveProductButton(){
+        clickOn(removeProductButton);
+        LOG.info("click on remove product button success");
+    }
+
+
+    public void clickOnOkButton(WebDriver driver){
+        waitForElementToBeVisible(driver, 10, OkButton);
+        clickOn(OkButton);
+        LOG.info("click on Ok button success");
+    }
+
 
 }

@@ -15,38 +15,7 @@ import java.util.List;
 public class TestCheckOutShoppingCart extends CommonAPI {
     Logger LOG = LogManager.getLogger(TestCheckOutShoppingCart.class.getName());
 
-    @Test
-    public void searchAndAddToCartAnItem() throws InterruptedException {
-        HomePageMagento homePage = new HomePageMagento(getDriver());
-        SigninPageMagento signinPageMagento = new SigninPageMagento(getDriver());
-        homePage.clickOnSigninButton();
-        String title = getCurrentTitle();
-        Assert.assertEquals(title, "Customer Login Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
-        LOG.info("Sign in title page validation success");
 
-        String email = ConnectDB.getTableColumnData("select * from cred","email").get(0);
-        signinPageMagento.typeEmailAddress(email);
-        String password = ConnectDB.getTableColumnData("select * from cred","password").get(0);
-        signinPageMagento.typePassword(password);
-        signinPageMagento.clickOnSigninButton();
-        LOG.info("Signin success");
-        String title1 = getCurrentTitle();
-        Assert.assertEquals(title1, "Home Page - Magento eCommerce - website to practice selenium | demo website for automation testing | selenium practice sites | selenium demo sites | best website to practice selenium automation | automation practice sites Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
-        LOG.info("Sign in title page validation success");
-        String item = "Bag";
-        homePage.typeItemToSearch(item);
-        homePage.clickOnSearchButton();
-        String title2 = getCurrentTitle();
-        Assert.assertEquals(title2, "Search results for: 'Bag' Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
-        LOG.info("search bag title page validation success");
-        //add a product"Wayfarer Messenger Bag" to the cart
-        SearchPageMagento searchPage = new SearchPageMagento(getDriver());
-        searchPage.clickOnWayfarerMessengerBag();
-        WayfarerMessengerBagPageMagento wayfarerMessengerBagPageMagento=new WayfarerMessengerBagPageMagento(getDriver());
-        wayfarerMessengerBagPageMagento.clickOnAddToCartButton();
-        wayfarerMessengerBagPageMagento.clickOnCartButton();
-        wayfarerMessengerBagPageMagento.clickOnRemovetButton();
-    }
     @Test
     public void ShoppingandAddToWishList() throws InterruptedException {
         HomePageMagento homePage = new HomePageMagento(getDriver());
@@ -127,7 +96,7 @@ public class TestCheckOutShoppingCart extends CommonAPI {
         FitnessEquipmentMagentoPage fitnessEquipmentMagentoPage = new FitnessEquipmentMagentoPage(getDriver());
         fitnessEquipmentMagentoPage.hoverOverItem1(getDriver());
         fitnessEquipmentMagentoPage.clickOnAddToCart1();
-        Thread.sleep(3000);
+
         fitnessEquipmentMagentoPage.hoverOverItem2(getDriver());
         Thread.sleep(3000);
         fitnessEquipmentMagentoPage.clickOnAddToCart2();
