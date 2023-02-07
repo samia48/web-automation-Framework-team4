@@ -17,7 +17,7 @@ public class TrashIconTest extends CommonAPI {
         Logger LOG = LogManager.getLogger(HomePage.class.getName());
         //String email = ConnectDB.getTableColumnData("select * from cred","password").get(0);
 
-        loginPage.clickOnLoginBtn();
+        //loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");

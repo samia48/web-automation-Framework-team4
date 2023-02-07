@@ -21,7 +21,7 @@ public class CreateNewCompanyTest extends CommonAPI {
         CreateNewCompanyPage companyPage = new CreateNewCompanyPage(getDriver());
         //String email = ConnectDB.getTableColumnData("select * from cred","password").get(0);
 
-        loginPage.clickOnLoginBtn();
+        //loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");
@@ -38,9 +38,9 @@ public class CreateNewCompanyTest extends CommonAPI {
         companyPage.typeName("Will Smith");
         companyPage.clickOnSaveButton();
         companyPage.clickOnAddCompanyButton();
+        /*Thread.sleep(2000);
+        companyPage.clickDeleteButton();
         Thread.sleep(2000);
-        companyPage.clickdeleteButton();
-        Thread.sleep(2000);
-        companyPage.clickDelete();
+        companyPage.clickDelete();*/
     }
 }

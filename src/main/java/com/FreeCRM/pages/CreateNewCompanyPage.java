@@ -34,12 +34,12 @@ public class CreateNewCompanyPage extends CommonAPI {
 
     public void clickOnAddCompanyButton(){
         clickOn(addCompanyButton);
-        LOG.info("click trash icon success");
+        LOG.info("click on companies success");
     }
 
     public void clickOnCompanyCreateBtn(){
         clickOn(companyCreateButton);
-        LOG.info("click trash icon success");
+        LOG.info("click on create button success");
     }
 
     public void typeName(String name){
@@ -49,17 +49,17 @@ public class CreateNewCompanyPage extends CommonAPI {
 
     public void clickOnSaveButton(){
         clickOn(saveButton);
-        LOG.info("click trash icon success");
+        LOG.info("click save button success");
     }
 
-    public void clickdeleteButton(){
+    public void clickDeleteButton(){
         clickOn(deleteBtn);
-        LOG.info("click trash icon success");
+        LOG.info("click on delete button success");
     }
 
     public void clickDelete(){
         clickOn(delete);
-        LOG.info("click trash icon success");
+        LOG.info("click on delete success");
     }
 
 }

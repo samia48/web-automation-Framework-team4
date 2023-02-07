@@ -40,12 +40,12 @@ public class CreateNewContactPage extends CommonAPI {
 
     public void clickOnAddContactIcon(){
         clickOn(addNewContactIcon);
-        LOG.info("click trash icon success");
+        LOG.info("click on contacts success");
     }
 
     public void clickOnCreateBtn(){
         clickOn(createBtn);
-        LOG.info("click trash icon success");
+        LOG.info("click on create button success");
     }
 
     public void typeFirstName(String firstName){
@@ -60,7 +60,7 @@ public class CreateNewContactPage extends CommonAPI {
 
     public void clickOnSaveButton(){
         clickOn(saveButton);
-        LOG.info("click trash icon success");
+        LOG.info("click save button success");
     }
 
 }

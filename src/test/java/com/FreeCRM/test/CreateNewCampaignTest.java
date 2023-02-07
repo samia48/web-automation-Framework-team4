@@ -1,34 +1,37 @@
 package com.FreeCRM.test;
 
 import base.CommonAPI;
+import com.FreeCRM.pages.CreateNewCampaignPage;
 import com.FreeCRM.pages.LoginPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SearchTest extends CommonAPI{
-    Logger LOG = LogManager.getLogger(SearchTest.class.getName());
+public class CreateNewCampaignTest extends CommonAPI {
+    Logger LOG = LogManager.getLogger(CreateNewCampaignTest.class.getName());
 
     @Test
-    public void SearchTextBoxTest() throws InterruptedException {
+    public void CreateNewCampaignVerify() throws InterruptedException {
         LoginPage loginPage = new LoginPage(getDriver());
-        //String email = ConnectDB.getTableColumnData("select * from cred","password").get(0);
+        CreateNewCampaignPage campaignPage = new CreateNewCampaignPage(getDriver());
 
         //loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");
-        Thread.sleep(2000);
 
         loginPage.typeEmailAddress("tsrahman28@gmail.com");
         loginPage.typePassword("Testaccount1@");
         loginPage.clickOnLoginButton();
-        Thread.sleep(2000);
 
-        loginPage.clickOnSearchTextBox();
-        loginPage.typeItemToSearch("james");
+        campaignPage.setHoverOverLeftMenu(getDriver());
+        campaignPage.clickOnCampaigns();
         Thread.sleep(2000);
-
+        campaignPage.clickOnCreateBtn();
+        Thread.sleep(2000);
+        campaignPage.typeOnNameField("My New Campaign");
+        Thread.sleep(2000);
+        campaignPage.clickOnSaveButton();
     }
 }
