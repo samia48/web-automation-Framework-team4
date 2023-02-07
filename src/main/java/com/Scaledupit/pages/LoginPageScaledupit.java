@@ -40,6 +40,9 @@ public class LoginPageScaledupit extends CommonAPI {
     WebElement RegisterButton;
     @FindBy(xpath = "//span[text()='Home']")
     WebElement homeButton;
+    @FindBy(xpath = "//li[@class='woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout']")
+    WebElement logOutButton;
+
 
     //reusable methods
     public void typeusername(String username){
@@ -75,13 +78,15 @@ public class LoginPageScaledupit extends CommonAPI {
         //LOG.info("error message success");
 
     }
-    //public void typePassword(String PassWord){
-       // type(passwordField, PassWord);
-       // LOG.info("type Password success");
-    //}
+
     public void clickOnHomeButton(){
         clickOn(homeButton);
         LOG.info("click Home button success");
+    }
+
+    public void clickOnLogOut(){
+        clickOn(logOutButton);
+        LOG.info("click log out button success");
     }
 
 

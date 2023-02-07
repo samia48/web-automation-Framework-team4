@@ -19,6 +19,10 @@
             <class name="com.Scaledupit.test.TestShoppingFromHomePage"></class>
             <class name="com.Scaledupit.test.ShoppingByCategories"></class>
             <class name="com.Scaledupit.test.TestAddReview"></class>
+            <class name="com.Scaledupit.test.TestFooterFunctions"></class>
+            <class name="com.Scaledupit.test.TestDiscountSales"></class>
+            <class name="com.Scaledupit.test.TestConnectSocialMedia"></class>
+            <class name="com.Scaledupit.test.TestLogOut"></class>
         </classes>
     </test>
 </suite>
