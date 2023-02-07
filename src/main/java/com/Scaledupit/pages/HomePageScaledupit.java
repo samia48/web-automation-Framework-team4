@@ -50,6 +50,21 @@ public class HomePageScaledupit extends CommonAPI {
     WebElement menCollection;
     @FindBy(xpath = "(//a[@class='woocommerce-LoopProduct-link woocommerce-loop-product__link']/img)[41]")
     WebElement guitar;
+    @FindBy(xpath = "//a[text()='New Arrival']")
+    WebElement newarrivalButton;
+
+    @FindBy(xpath = "(//a[text()='Blog'])[6]")
+    WebElement blogButton;
+    @FindBy(xpath = "(//a[@class='slider-button primary'])[14]")
+    WebElement  shopNowButton;
+    @FindBy(xpath = "(//i[@class='fa fa-facebook'])[1]")
+    WebElement  faceBookButton;
+    @FindBy(xpath = "(//i[@class='fa fa-instagram'])[1]")
+    WebElement  instagramButton;
+    @FindBy(xpath = "(//i[@class='fa fa-camera-retro'])[1]")
+    WebElement  snapshotButton;
+
+
 
     //reusable steps
     public void clickOnMyAccountButton() {
@@ -135,6 +150,42 @@ public class HomePageScaledupit extends CommonAPI {
     public void clickOnGuitar() {
         clickOn(guitar);
         LOG.info("click on guitar success");
+
+    }
+
+    public void clickOnNewArrivalButton() {
+        clickOn(newarrivalButton);
+        LOG.info("click on new arrival success");
+
+    }
+
+    public void clickOnBlogButton() {
+        clickOn(blogButton);
+        LOG.info("click on blog success");
+
+    }
+
+    public void clickOnShopNowButton() {
+        clickOn(shopNowButton);
+        LOG.info("click on discount Shop success");
+
+    }
+
+    public void clickOnFaceBookButton() {
+        clickOn(faceBookButton);
+        LOG.info("click on facebook success");
+
+    }
+
+    public void clickOnInstagramButton() {
+        clickOn(instagramButton);
+        LOG.info("click on discount Shop success");
+
+    }
+
+    public void clickOnSnapShotButton() {
+        clickOn(snapshotButton);
+        LOG.info("click on discount Shop success");
 
     }
 
