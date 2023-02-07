@@ -72,6 +72,7 @@ public class TestCheckOutShoppingCart extends CommonAPI {
     public void UpdateShoppingCartAndCheckout() throws InterruptedException {
         HomePageMagento homePage = new HomePageMagento(getDriver());
         SigninPageMagento signinPageMagento = new SigninPageMagento(getDriver());
+        SuccessPurchasePage successPurchasePage =new SuccessPurchasePage(getDriver());
         homePage.clickOnSigninButton();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Customer Login Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
@@ -116,10 +117,19 @@ public class TestCheckOutShoppingCart extends CommonAPI {
         shoppingCartPageMagento.ClickOnUpdateShoppingCart();
         Thread.sleep(3000);
         shoppingCartPageMagento.ClickOnProceedToCheckOutButton();
+        Thread.sleep(3000);
         CheckOutPageMagento checkOutPageMagento = new CheckOutPageMagento(getDriver());
         String title4= getCurrentTitle();
         Assert.assertEquals(title4, "Checkout Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
         LOG.info("checkout title page validation success");
+        checkOutPageMagento.clickShipingMethodBtn();
+        checkOutPageMagento.clickOnNextButton();
+        checkOutPageMagento.clickOnPlaceOrderBtn();
+        String title5= getCurrentTitle();
+        Assert.assertEquals(title5, "Success Page Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
+        LOG.info("success purchase title page validation success");
+        String confirmation = successPurchasePage.getconfirmationMessage();
+        Assert.assertEquals(confirmation, "Thank you for your purchase!");
 
 
 
