@@ -32,6 +32,10 @@ public class CreatenewAccountPageMagento extends CommonAPI {
 
     @FindBy(id = "email_address-error")
     WebElement errorMessage;
+    @FindBy(xpath = "//div[@class='message-error error message']")
+    WebElement errorMessage1;
+    @FindBy(xpath = "//div[@class='message-success success message']")
+    WebElement confirmation;
 
 
 
@@ -65,6 +69,16 @@ public class CreatenewAccountPageMagento extends CommonAPI {
     public String getErrorMessage(){
 
         return getTextFromElement(errorMessage);
+
+    }
+    public String getErrorMessage1(){
+
+        return getTextFromElement(errorMessage1);
+
+    }
+    public String getConfirmation(){
+
+        return getTextFromElement(confirmation);
 
     }
 

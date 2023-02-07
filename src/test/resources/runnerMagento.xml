@@ -17,6 +17,12 @@
             <class name="com.Magento.test.TestCheckOutCompareList"></class>
             <class name="com.Magento.test.TestCheckOutShoppingCart"></class>
             <class name="com.Magento.test.TestSearch"></class>
+            <class name="com.Magento.test.TestSignOut"></class>
+            <class name="com.Magento.test.TestFonctionsProductPage"></class>
+            <class name="com.Magento.test.TestAddRatingAndReview"></class>
+            <class name="com.Magento.test.TestReorderAndRuturn"></class>
+            <class name="com.Magento.test.TestDownloadableProducts"></class>
+            <class name="com.Magento.test.TestEditAccountInformation"></class>
         </classes>
     </test>
 </suite>

@@ -44,10 +44,48 @@ public class HomePageMagento extends CommonAPI {
 
     @FindBy (xpath = "//a[@class='action compare']")
     WebElement compareProductsButton;
+    @FindBy (xpath = "(//button[@class='action switch'])[1]")
+    WebElement DropDown;
+
+    @FindBy (xpath = "//li[@class='authorization-link']/a")
+    WebElement SignOut;
+    @FindBy (xpath = "//span[text()='Women']")
+    WebElement womenProducts;
+    @FindBy (xpath = "//span[text()='Shop New Yoga']")
+    WebElement shopNewYoga;
+    @FindBy (xpath = "//a[text()='Orders and Returns']")
+    WebElement OrderAndRutersButton;
+
+    @FindBy (xpath = "//a[text()='Advanced Search']")
+    WebElement AdvancedSearchButton;
+    @FindBy (xpath = "(//span[@class='ui-menu-icon ui-icon ui-icon-carat-1-e'])[8]")
+    WebElement TrainingButton;
+    @FindBy (xpath = "//a[text()='Video Download']")
+    WebElement VideoDownload ;
+    @FindBy (xpath = "(//span[@class='action more icon'])[1]")
+    WebElement ShopPantsToday;
+    @FindBy (xpath = "")
+    WebElement MyAccount;
+
+
 
 
 
     //reusable steps
+    public void clickOnAdvancedSearchButton(){
+        clickOn(AdvancedSearchButton);
+        LOG.info("click Advanced search success");
+    }
+    public void clickOnVideoDownload(){
+        clickOn(VideoDownload);
+        LOG.info("click Video Download success");
+    }
+    public void clickOnTraining(){
+        clickOn(TrainingButton);
+        LOG.info("click Advanced search success");
+    }
+
+
     public void typeItemToSearch(String item){
         type(searchField, item);
         LOG.info("item name type success");
@@ -102,5 +140,36 @@ public class HomePageMagento extends CommonAPI {
         LOG.info("click compare Products Button success");
     }
 
+    public void clickOnDropDown(){
+        clickOn(DropDown);
+        LOG.info("click DropDown Button success");
+    }
+
+    public void clickOnSignOut(){
+        clickOn(SignOut);
+        LOG.info("click Sign out Button success");
+    }
+
+    public void clickOnWommenProducts(){
+        clickOn(womenProducts);
+        LOG.info("click on women products success");
+    }
+
+    public void clickOnShopNewYoga(){
+        clickOn(shopNewYoga);
+        LOG.info("Click on shop new yoga products success");
+    }
+    public void clickOnOrderAndRuters(){
+        clickOn(OrderAndRutersButton);
+        LOG.info("Click on shop new yoga products success");
+    }
+    public void clickOnShopPantsToday(){
+        clickOn(ShopPantsToday);
+        LOG.info("Click on shop pants today success");
+    }
+    public void clickOnMyAccount(){
+        clickOn(MyAccount);
+        LOG.info("click On MyAccount Button success");
+    }
 
 }

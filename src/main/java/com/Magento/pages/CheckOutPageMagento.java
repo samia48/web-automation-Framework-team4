@@ -17,10 +17,25 @@ public class CheckOutPageMagento extends CommonAPI {
 
     @FindBy(xpath = "//span[text()='View and Edit Cart']")
     WebElement viewAndEditCartBoton;
+    @FindBy(xpath = "//input[@class='radio'])[1]")
+    WebElement ShipingMethodBtn;
+    @FindBy(xpath = "//span[text()='Next']")
+    WebElement NextButton;
+    @FindBy(xpath = "//span[text()='Place Order']")
+    WebElement PlaceOrderBtn;
 
-
-
-
+    public void clickOnPlaceOrderBtn(){
+        clickOn(PlaceOrderBtn);
+        LOG.info("click on Next button success");
+    }
+    public void clickOnNextButton(){
+        clickOn(NextButton);
+        LOG.info("click on Next button success");
+    }
+    public void clickShipingMethodBtn(){
+        clickOn(ShipingMethodBtn);
+        LOG.info("click on Shiping Methodbutton success");
+    }
     public void clickOnViewAndEditCart(WebDriver driver){
         clickWithActions(driver, viewAndEditCartBoton);
         LOG.info("click on view and edit cart button success");

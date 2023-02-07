@@ -14,12 +14,12 @@ public class WatchPageMagento extends CommonAPI {
         PageFactory.initElements(driver, this);
     }
     //objects
-    @FindBy(xpath = "//img[@alt='Dash Digital Watch']")
+    @FindBy(xpath = "(//img[@alt='Dash Digital Watch']")
     WebElement Item1;
 
-    @FindBy(xpath = "(//a[@class='action tocompare'])[2]")
+    @FindBy(xpath = "(//a[@class='action tocompare'])[5]")
     WebElement addToCompareButton1;
-    @FindBy(xpath = "//img[@alt='Aim Analog Watch']")
+    @FindBy(xpath = "(//span[@class='product-image-wrapper'])[9]")
     WebElement Item2;
 
     @FindBy(xpath = "(//a[@class='action tocompare'])[9]")
