@@ -8,34 +8,36 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CreateNewCasePage extends CommonAPI {
-    Logger LOG = LogManager.getLogger(CreateNewCasePage.class.getName());
-    public CreateNewCasePage(WebDriver driver) { PageFactory.initElements(driver, this);}
+public class CreateNewEventPage extends CommonAPI {
+    Logger LOG = LogManager.getLogger(CreateNewEventPage.class.getName());
+    public CreateNewEventPage(WebDriver driver) { PageFactory.initElements(driver, this);}
 
     @FindBy(xpath = "//i[@class='users icon']")
     WebElement hoverOverLeftMenu;
 
-    @FindBy(xpath = "(//span[@class='item-text'])[7]")
-    WebElement clickCases;
+    @FindBy(xpath = "//i[@class='calendar icon']")
+    WebElement calenderIcon;
 
-    @FindBy(xpath = "(//button[@class='ui linkedin button'])[3]")
+    @FindBy(xpath = "//button[@class='ui linkedin button']")
     WebElement createButton;
 
     @FindBy(xpath = "//input[@name='title']")
     WebElement titleField;
 
+    @FindBy(xpath = " //button[@class='ui button']")
+    WebElement cancelButton;
+
     @FindBy(xpath = "//button[@class='ui linkedin button']")
     WebElement saveButton;
-
 
     public void setHoverOverLeftMenu(WebDriver driver){
         hoverOver(driver, hoverOverLeftMenu);
         LOG.info("hover over menu success");
     }
 
-    public void clickOnTaskIcon(){
-        clickOn(clickCases);
-        LOG.info("click on cases icon success");
+    public void clickOnCalenderIcon(){
+        clickOn(calenderIcon);
+        LOG.info("click on calender icon success");
     }
 
     public void clickOnCreateBtn(){
@@ -43,9 +45,14 @@ public class CreateNewCasePage extends CommonAPI {
         LOG.info("click on create button success");
     }
 
-    public void typeTitle(String enterTitle){
+    public void typeOnTitleField(String enterTitle){
         type(titleField, enterTitle);
         LOG.info("type on title field success");
+    }
+
+    public void clickOnCancelButton(){
+        clickOn(cancelButton);
+        LOG.info("click on cancel button success");
     }
     public void clickOnSaveButton(){
         clickOn(saveButton);

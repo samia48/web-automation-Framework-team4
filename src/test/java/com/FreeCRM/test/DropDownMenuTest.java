@@ -9,6 +9,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
+
 public class DropDownMenuTest extends CommonAPI {
     Logger LOG = LogManager.getLogger(DropDownMenuTest.class.getName());
 
@@ -19,13 +22,14 @@ public class DropDownMenuTest extends CommonAPI {
 
 
         String title = getCurrentTitle();
-        Assert.assertEquals(title, "#1 Free CRM Software for every business");
+        Assert.assertEquals(title, "Cogmento CRM and Business Cloud Solutions");
         LOG.info("login title page validation success");
         Thread.sleep(2000);
 
 
         dropDownPage.hoverOverCrm(getDriver());
         dropDownPage.clickOnDropDown();
+
 
 
     }

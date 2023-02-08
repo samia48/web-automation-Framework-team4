@@ -43,7 +43,7 @@ public class LoginPage extends CommonAPI {
     WebElement searchField;
 
 
-    @FindBy(xpath = "//a[contains(text(),'Log In')]")
+    @FindBy(xpath = "//span[contains(text(),'Log In')]")
     WebElement loginBtn;
 
 
@@ -102,8 +102,4 @@ public class LoginPage extends CommonAPI {
         LOG.info("item name type and enter success");
     }
 
-    /*public void ClickOnDropDown(){
-        clickOn(dropDownMenu);
-        LOG.info("click on dropdown menu success");
-    }*/
 }

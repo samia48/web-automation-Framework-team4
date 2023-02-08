@@ -48,13 +48,13 @@ public class CreateNewContactPage extends CommonAPI {
         LOG.info("click on create button success");
     }
 
-    public void typeFirstName(String firstName){
-        type(firstNameField, firstName);
+    public void typeFirstName(String enterFirstName){
+        type(firstNameField, enterFirstName);
         LOG.info("type first name success");
     }
 
-    public void typeLastName(String lastName){
-        type(firstNameField, lastName);
+    public void typeLastName(String enterLastName){
+        type(firstNameField, enterLastName);
         LOG.info("type last name success");
     }
 

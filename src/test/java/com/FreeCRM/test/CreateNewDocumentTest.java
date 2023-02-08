@@ -16,7 +16,7 @@ public class CreateNewDocumentTest extends CommonAPI {
         LoginPage loginPage = new LoginPage(getDriver());
         CreateNewDocumentPage documentPage = new CreateNewDocumentPage(getDriver());
 
-        //loginPage.clickOnLoginBtn();
+        loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");
@@ -28,12 +28,6 @@ public class CreateNewDocumentTest extends CommonAPI {
         documentPage.setHoverOverLeftMenu(getDriver());
         documentPage.clickOnDocuments();
         Thread.sleep(3000);
-        /*documentPage.clickOnNewFolderButton();
-        Thread.sleep(3000);
-        documentPage.typeNewFolderName("My New Document");
-        Thread.sleep(3000);
-        documentPage.clickOnAddNewFolderSaveButton();
-        Thread.sleep(3000);*/
         documentPage.clickOnCreateBtn();
         Thread.sleep(3000);
         documentPage.clickOnCancelButton();

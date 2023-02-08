@@ -18,7 +18,7 @@ public class CreateNewDealTest extends CommonAPI {
         CreateNewContactPage contactPage = new CreateNewContactPage(getDriver());
         CreateNewDealPage dealPage = new CreateNewDealPage(getDriver());
 
-        //loginPage.clickOnLoginBtn();
+        loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");
