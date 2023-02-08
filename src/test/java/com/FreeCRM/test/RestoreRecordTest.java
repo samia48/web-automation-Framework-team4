@@ -3,21 +3,23 @@ package com.FreeCRM.test;
 import base.CommonAPI;
 import com.FreeCRM.pages.HomePage;
 import com.FreeCRM.pages.LoginPage;
+import com.FreeCRM.pages.RestoreRecordPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TrashIconTest extends CommonAPI {
-    Logger LOG = LogManager.getLogger(TrashIconTest.class.getName());
+public class RestoreRecordTest extends CommonAPI {
+    Logger LOG = LogManager.getLogger(RestoreRecordTest.class.getName());
 
     @Test
-    public void trashIconCheckTest() throws InterruptedException{
+    public void RestoreRecordVerifyTest() throws InterruptedException{
         LoginPage loginPage = new LoginPage(getDriver());
-        Logger LOG = LogManager.getLogger(HomePage.class.getName());
+        RestoreRecordPage recordPage = new RestoreRecordPage(getDriver());
+        //Logger LOG = LogManager.getLogger(HomePage.class.getName());
         //String email = ConnectDB.getTableColumnData("select * from cred","password").get(0);
 
-        //loginPage.clickOnLoginBtn();
+        loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");
@@ -33,6 +35,13 @@ public class TrashIconTest extends CommonAPI {
         loginPage.clickOnTrashIcon();
         Thread.sleep(3000);
 
+        recordPage.clickOnCompany();
+        Thread.sleep(3000);
+        recordPage.clickOnCheckBox();
+        Thread.sleep(3000);
+        recordPage.clickOnRestoreButton();
+        Thread.sleep(3000);
+        recordPage.clickOnOkButton();
 
     }
 }

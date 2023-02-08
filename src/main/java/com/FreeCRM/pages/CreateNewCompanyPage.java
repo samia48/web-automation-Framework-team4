@@ -42,8 +42,8 @@ public class CreateNewCompanyPage extends CommonAPI {
         LOG.info("click on create button success");
     }
 
-    public void typeName(String name){
-        type(nameField, name);
+    public void typeName(String enterName){
+        type(nameField, enterName);
         LOG.info("type name success");
     }
 

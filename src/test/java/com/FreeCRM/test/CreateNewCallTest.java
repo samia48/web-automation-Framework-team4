@@ -16,7 +16,7 @@ public class CreateNewCallTest extends CommonAPI {
         LoginPage loginPage = new LoginPage(getDriver());
         CreateNewCallPage callPage = new CreateNewCallPage(getDriver());
 
-        //loginPage.clickOnLoginBtn();
+        loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");
