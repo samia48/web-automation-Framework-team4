@@ -39,8 +39,8 @@ public class TestSignin extends CommonAPI {
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Customer Login Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
         LOG.info("login title page validation success");
-        String email = ConnectDB.getTableColumnData("select * from cred","invalidEmailAdress").get(0);
-        signinPageMagento.typeInvalidEmailAddress("invalidEmailAdress");
+        String invalidEmailAdress = ConnectDB.getTableColumnData("select * from cred","invalidEmailAdress").get(0);
+        signinPageMagento.typeInvalidEmailAddress(invalidEmailAdress);
         signinPageMagento.typePassword("password");
         signinPageMagento.clickOnSigninButton();
         String error = signinPageMagento.getErrorMessage();

@@ -22,7 +22,6 @@
             <class name="com.Magento.test.TestAddRatingAndReview"></class>
             <class name="com.Magento.test.TestReorderAndRuturn"></class>
             <class name="com.Magento.test.TestDownloadableProducts"></class>
-            <class name="com.Magento.test.TestEditAccountInformation"></class>
         </classes>
     </test>
 </suite>

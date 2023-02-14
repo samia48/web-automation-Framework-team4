@@ -30,6 +30,10 @@ public class PantsPage extends CommonAPI {
         clickOn(StyleButton);
         LOG.info("click On Style Button success");
     }
+    public void selectOptionFromMenuDropdown(String option){
+        selectOptionFromDropdown(StyleButton, option);
+        LOG.info(option+" option selected from the dropdown");
+    }
 
     public void clickOnBaseLayerButton(){
         clickOn(BaseLayerButton);

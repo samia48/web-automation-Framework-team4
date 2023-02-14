@@ -21,7 +21,7 @@ public class CompareWatchPage extends CommonAPI {
     WebElement OkButton;
 
 
-    @FindBy(xpath = "(//a[@class='action delete'])[3]")
+    @FindBy(xpath = "(//a[@class='action delete'])[1]")
     WebElement removeProductButton;
 
 
@@ -38,8 +38,8 @@ public class CompareWatchPage extends CommonAPI {
     }
 
 
-    public void clickOnOkButton(WebDriver driver){
-        waitForElementToBeVisible(driver, 10, OkButton);
+    public void clickOnOkButton(){
+        //waitForElementToBeVisible(driver, 10, OkButton);
         clickOn(OkButton);
         LOG.info("click on Ok button success");
     }

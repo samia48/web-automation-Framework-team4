@@ -32,7 +32,18 @@ public class ShoppingCartPageMagento extends CommonAPI {
 
     @FindBy(xpath = "//a[@class='logo']//preceding-sibling::img")
     WebElement LUMAButton;
+    @FindBy(xpath = "(//input[@class='input-text qty'])[1]")
+    WebElement quantityField;
 
+
+
+
+
+    public void typeOnQuantityField(){
+        quantityField.clear();
+        quantityField.sendKeys("2");
+        LOG.info("type quantity success");
+    }
 
 
     public void ClickOnUpdateShoppingCart(){
