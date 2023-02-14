@@ -14,9 +14,14 @@ public class HomePage extends CommonAPI {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//span[@class='item-text']")
-    WebElement leftMenu;
 
+    @FindBy(xpath = "//i[@class='users icon']")
+    WebElement hoverOverLeftMenu;
+
+    public void setHoverOverLeftMenu(WebDriver driver){
+        hoverOver(driver, hoverOverLeftMenu);
+        LOG.info("hover over menu success");
+    }
 
 
 }

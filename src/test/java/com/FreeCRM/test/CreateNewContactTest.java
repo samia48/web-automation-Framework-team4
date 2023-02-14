@@ -18,7 +18,7 @@ public class CreateNewContactTest extends CommonAPI {
 
         //String email = ConnectDB.getTableColumnData("select * from cred","password").get(0);
 
-        //loginPage.clickOnLoginBtn();
+        loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");

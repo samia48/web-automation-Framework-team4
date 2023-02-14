@@ -16,7 +16,7 @@ public class CreateNewCaseTest extends CommonAPI {
         LoginPage loginPage = new LoginPage(getDriver());
         CreateNewCasePage casePage = new CreateNewCasePage(getDriver());
 
-        //loginPage.clickOnLoginBtn();
+        loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");

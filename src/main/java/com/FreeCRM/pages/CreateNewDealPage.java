@@ -37,8 +37,8 @@ public class CreateNewDealPage extends CommonAPI {
 
     }
 
-    public void typeOnTitle(String title){
-        type(titleField, title);
+    public void typeOnTitle(String enterTitle){
+        type(titleField, enterTitle);
         LOG.info("type on title field success");
     }
 

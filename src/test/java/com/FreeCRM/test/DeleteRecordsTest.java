@@ -1,34 +1,39 @@
 package com.FreeCRM.test;
 
 import base.CommonAPI;
+import com.FreeCRM.pages.DeleteRecordsPage;
 import com.FreeCRM.pages.LoginPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SearchTest extends CommonAPI{
-    Logger LOG = LogManager.getLogger(SearchTest.class.getName());
+public class DeleteRecordsTest extends CommonAPI {
+    Logger LOG = LogManager.getLogger(DeleteRecordsTest.class.getName());
 
     @Test
-    public void SearchTextBoxTest() throws InterruptedException {
+    public void DeleteRecordVerify() throws InterruptedException {
         LoginPage loginPage = new LoginPage(getDriver());
-        //String email = ConnectDB.getTableColumnData("select * from cred","password").get(0);
+        DeleteRecordsPage deleteRecordPage = new DeleteRecordsPage(getDriver());
 
         loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");
-        Thread.sleep(2000);
 
         loginPage.typeEmailAddress("tsrahman28@gmail.com");
         loginPage.typePassword("Testaccount1@");
         loginPage.clickOnLoginButton();
-        Thread.sleep(2000);
 
-        loginPage.clickOnSearchTextBox();
-        loginPage.typeItemToSearch("james");
+        deleteRecordPage.clickOnTrashIcon();
         Thread.sleep(2000);
+        deleteRecordPage.clickOnContactIcon();
+        Thread.sleep(2000);
+        deleteRecordPage.clickOnSelectIcon();
+        Thread.sleep(2000);
+        deleteRecordPage.clickOnRemoveIcon();
+        Thread.sleep(2000);
+        deleteRecordPage.clickOnOkButton();
 
     }
 }

@@ -16,7 +16,7 @@ public class CreateNewTaskTest extends CommonAPI {
         LoginPage loginPage = new LoginPage(getDriver());
         CreateNewTaskPage taskPage = new CreateNewTaskPage(getDriver());
 
-        //loginPage.clickOnLoginBtn();
+        loginPage.clickOnLoginBtn();
         String title = getCurrentTitle();
         Assert.assertEquals(title, "Cogmento CRM");
         LOG.info("login title page validation success");

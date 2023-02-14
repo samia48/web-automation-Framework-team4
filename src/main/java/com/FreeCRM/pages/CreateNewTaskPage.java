@@ -43,8 +43,8 @@ public class CreateNewTaskPage extends CommonAPI {
         LOG.info("click on create button success");
     }
 
-    public void typeTitle(String title){
-        type(titleField, title);
+    public void typeTitle(String enterTitle){
+        type(titleField, enterTitle);
         LOG.info("type on title field success");
     }
     public void clickOnSaveButton(){
