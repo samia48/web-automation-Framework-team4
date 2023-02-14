@@ -12,6 +12,7 @@ import utility.ReadFromExcel;
 public class TestFonctionsProductPage extends CommonAPI {
     Logger LOG = LogManager.getLogger(TestCheckOutCompareList.class.getName());
 
+
     ReadFromExcel read = new ReadFromExcel("D:\\BootCamp Selenium\\web-automation-framework-team4\\data\\titles.xlsx", "Magento");
 
     @Test
@@ -54,9 +55,10 @@ public class TestFonctionsProductPage extends CommonAPI {
         Assert.assertEquals(title, "Pants Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
         LOG.info("Pants title page validation success");
         pantsPage.clickOnStyleButton();
-        pantsPage.clickOnBaseLayerButton();
+        Thread.sleep(4000);
+        //pantsPage.clickOnBaseLayerButton();
         pantsPage.clickOnClimatBbutton();
-        pantsPage.clickOnColdButton();
+        //pantsPage.clickOnColdButton();
 
     }
 

@@ -160,6 +160,9 @@ public class CommonAPI {
     public void clickOn(WebElement element){
         element.click();
     }
+    public void clear(WebElement element){
+        element.clear();
+    }
     public void type(WebElement element, String text){
         element.sendKeys(text);
     }

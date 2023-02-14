@@ -101,7 +101,7 @@ public class TestCheckOutShoppingCart extends CommonAPI {
         fitnessEquipmentMagentoPage.hoverOverItem2(getDriver());
         Thread.sleep(3000);
         fitnessEquipmentMagentoPage.clickOnAddToCart2();
-        Thread.sleep(3000);
+
         fitnessEquipmentMagentoPage.clickOnCartButton();
         Thread.sleep(3000);
         fitnessEquipmentMagentoPage.clickOnViewAndEditCart(getDriver());
@@ -110,29 +110,30 @@ public class TestCheckOutShoppingCart extends CommonAPI {
         Assert.assertEquals(title3, "Shopping Cart Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
         LOG.info("Shopping Cart title page validation success");
         ShoppingCartPageMagento shoppingCartPageMagento = new ShoppingCartPageMagento(getDriver());
+        shoppingCartPageMagento.typeOnQuantityField();
+        LOG.info("update quantity success");
         shoppingCartPageMagento.ClickOnRemoveButton();
-        driver.findElement(By.xpath("(//input[@class='input-text qty'])[1]")).clear();
-        driver.findElement(By.xpath("(//input[@class='input-text qty'])[1]")).sendKeys("2");
         LOG.info("update quantity success");
         shoppingCartPageMagento.ClickOnUpdateShoppingCart();
         Thread.sleep(3000);
+
         shoppingCartPageMagento.ClickOnProceedToCheckOutButton();
         Thread.sleep(3000);
         CheckOutPageMagento checkOutPageMagento = new CheckOutPageMagento(getDriver());
         String title4= getCurrentTitle();
         Assert.assertEquals(title4, "Checkout Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
         LOG.info("checkout title page validation success");
-        checkOutPageMagento.clickShipingMethodBtn();
+        Thread.sleep(1000);
+
+        checkOutPageMagento.clickOnShipingMethodBtn();
         checkOutPageMagento.clickOnNextButton();
-        checkOutPageMagento.clickOnPlaceOrderBtn();
+        Thread.sleep(3000);
+        checkOutPageMagento.clickOnPlaceOrderButton();
         String title5= getCurrentTitle();
-        Assert.assertEquals(title5, "Success Page Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
+        Assert.assertEquals(title5, "Checkout Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
         LOG.info("success purchase title page validation success");
         String confirmation = successPurchasePage.getconfirmationMessage();
         Assert.assertEquals(confirmation, "Thank you for your purchase!");
-
-
-
     }
 
 }

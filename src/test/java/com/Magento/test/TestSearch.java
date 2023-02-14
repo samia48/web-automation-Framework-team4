@@ -4,6 +4,7 @@ import base.CommonAPI;
 import com.Magento.pages.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utility.ConnectDB;
@@ -40,6 +41,42 @@ public class TestSearch extends CommonAPI {
 
     }
     @Test
+    public void searchAnItemAndAddToWishList() throws InterruptedException {
+        HomePageMagento homePage = new HomePageMagento(getDriver());
+        SigninPageMagento signinPageMagento = new SigninPageMagento(getDriver());
+        SuccessPurchasePage successPurchasePage =new SuccessPurchasePage(getDriver());
+        homePage.clickOnSigninButton();
+        String title = getCurrentTitle();
+        Assert.assertEquals(title, "Customer Login Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
+        LOG.info("Sign in title page validation success");
+
+        String email = ConnectDB.getTableColumnData("select * from cred","email").get(0);
+        signinPageMagento.typeEmailAddress(email);
+        String password = ConnectDB.getTableColumnData("select * from cred","password").get(0);
+        signinPageMagento.typePassword(password);
+        signinPageMagento.clickOnSigninButton();
+        LOG.info("Signin success");
+        String title1 = getCurrentTitle();
+        Assert.assertEquals(title1, "Home Page - Magento eCommerce - website to practice selenium | demo website for automation testing | selenium practice sites | selenium demo sites | best website to practice selenium automation | automation practice sites Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
+        LOG.info("Sign in title page validation success");
+
+        String item = "jacket";
+        homePage.typeItemToSearch(item);
+        Thread.sleep(3000);
+        homePage.clickOnSearchButton();
+
+        String expectedTitle1 = read.getCellValueForGivenHeaderAndKey("key","jacket search title");
+        String actualTitle1 = getCurrentTitle();
+        Assert.assertEquals(expectedTitle1, actualTitle1);
+
+        LOG.info("search jacket title page validation success");
+
+        SearchPageMagento searchPage = new SearchPageMagento(getDriver());
+        searchPage.hoverOverTyphonPerformanceFleecelinedJacket(getDriver());
+        searchPage.clickOnAddToWishList();
+
+    }
+    @Test
     public void AdvancedSearch() throws InterruptedException {
         HomePageMagento homePage = new HomePageMagento(getDriver());
         AdvancedSearchPage advancedSearchPage=new AdvancedSearchPage(getDriver());
@@ -60,4 +97,5 @@ public class TestSearch extends CommonAPI {
         Assert.assertEquals(errorMessage, "We can't find any items matching these search criteria. Modify your search.");
 
     }
+
 }

@@ -3,6 +3,7 @@ package com.Magento.test;
 import base.CommonAPI;
 import com.Magento.pages.CreatenewAccountPageMagento;
 import com.Magento.pages.HomePageMagento;
+import com.github.javafaker.Faker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -11,6 +12,11 @@ import utility.ConnectDB;
 
 public class TestCreateNewAccount extends CommonAPI {
     Logger LOG = LogManager.getLogger(TestCreateNewAccount.class.getName());
+    Faker fakeData = new Faker();
+    String emailAdress=fakeData.internet().emailAddress();
+    String name = fakeData.name().firstName();
+    String lastName = fakeData.name().lastName();
+
 
     @Test
     public void RegisterWithAnExistingCredentials() throws InterruptedException {
@@ -65,12 +71,13 @@ public class TestCreateNewAccount extends CommonAPI {
         Assert.assertEquals(title, "Create New Customer Account Magento Commerce - website to practice selenium | demo website for automation testing | selenium practice sites");
         LOG.info("create an account title page validation success");
         CreatenewAccountPageMagento createnewAccountPageMagento = new CreatenewAccountPageMagento(getDriver());
-        createnewAccountPageMagento.typeFirstName("FirstName");
-        createnewAccountPageMagento.typeLastName("LastName");
-        createnewAccountPageMagento.typeEmailAddress("email7@yahoo.com");
-        createnewAccountPageMagento.typePassword("password@1234");
-        createnewAccountPageMagento.typeConfirmPassword("password@1234");
+        createnewAccountPageMagento.typeFirstName(name);
+        createnewAccountPageMagento.typeLastName(lastName);
+        createnewAccountPageMagento.typeEmailAddress(emailAdress);
+        createnewAccountPageMagento.typePassword("password&1234");
+        createnewAccountPageMagento.typeConfirmPassword("password&1234");
         createnewAccountPageMagento.clickOnCreateanAccountButton();
+        Thread.sleep(3000);
         String confirmation = createnewAccountPageMagento.getConfirmation();
         Assert.assertEquals(confirmation, "Thank you for registering with Fake Online Clothing Store.");
         LOG.info(" Creation of a new account success");

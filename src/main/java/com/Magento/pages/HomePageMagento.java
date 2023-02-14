@@ -3,6 +3,7 @@ package com.Magento.pages;
 import base.CommonAPI;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -64,8 +65,10 @@ public class HomePageMagento extends CommonAPI {
     WebElement VideoDownload ;
     @FindBy (xpath = "(//span[@class='action more icon'])[1]")
     WebElement ShopPantsToday;
-    @FindBy (xpath = "")
+    @FindBy (xpath = "(//div[@class='customer-menu']/ul/li/a)[1]")
     WebElement MyAccount;
+    @FindBy (xpath = "//a[@id='ui-id-27']")
+    WebElement Watches;
 
 
 
@@ -90,6 +93,7 @@ public class HomePageMagento extends CommonAPI {
         type(searchField, item);
         LOG.info("item name type success");
     }
+
     public void clickOnSearchButton(){
         clickOn(searchButton);
         LOG.info("click search success");
@@ -170,6 +174,16 @@ public class HomePageMagento extends CommonAPI {
     public void clickOnMyAccount(){
         clickOn(MyAccount);
         LOG.info("click On MyAccount Button success");
+    }
+    public void hoverOverGear(WebDriver driver){
+        waitForElementToBeVisible(driver, 10, gearFloatingMenu);
+        hoverOver(driver, gearFloatingMenu);
+        LOG.info("Gear hover over menu success");
+    }
+
+    public void clickOnWatches(){
+        clickOn(Watches);
+        LOG.info("click Watches success");
     }
 
 }
