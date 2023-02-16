@@ -10,7 +10,6 @@
 
     <parameter name="browserName" value="chrome"></parameter>
    <!--<parameter name="url" value="https://ui.cogmento.com/?lang=en-GB"></parameter>-->
-
     <!--<parameter name="url" value="https://freecrm.com/"></parameter>-->
     <parameter name="url" value="https://cogmento.com/"></parameter>
     <test name="FreeCRM tests">
@@ -25,7 +24,7 @@
             <class name="com.FreeCRM.test.RestoreRecordTest"></class>
             <class name="com.FreeCRM.test.CreateNewContactTest"></class>
             <class name="com.FreeCRM.test.CreateNewCompanyTest"></class>
-           <class name="com.FreeCRM.test.CreateNewDealTest"></class>
+            <class name="com.FreeCRM.test.CreateNewDealTest"></class>
             <class name="com.FreeCRM.test.CreateNewTaskTest"></class>
             <class name="com.FreeCRM.test.CreateNewCaseTest"></class>
             <class name="com.FreeCRM.test.CreateNewDocumentTest"></class>
