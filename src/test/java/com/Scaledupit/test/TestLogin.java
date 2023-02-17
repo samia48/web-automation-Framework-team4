@@ -3,6 +3,7 @@ package com.Scaledupit.test;
 import base.CommonAPI;
 import com.Scaledupit.pages.HomePageScaledupit;
 import com.Scaledupit.pages.LoginPageScaledupit;
+import com.github.javafaker.Faker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -12,6 +13,9 @@ import utility.ConnectDB;
 public class TestLogin extends CommonAPI {
 
     Logger LOG = LogManager.getLogger(com.Scaledupit.test.TestLogin.class.getName());
+    Faker fakeData = new Faker();
+    String username =fakeData.internet().emailAddress();
+
 
     @Test
     public void loginWithValidcredential() {
@@ -57,7 +61,7 @@ public class TestLogin extends CommonAPI {
         String title = getCurrentTitle();
         Assert.assertEquals(title, "My account – Automation");
         LOG.info("login title page validation success");
-        String username = ConnectDB.getTableColumnData("select * from cred", "username").get(0);
+        //String username = ConnectDB.getTableColumnData("select * from cred", "username").get(0);
         loginPage.typeusername(username);
         loginPage.typepassword("");
         loginPage.clickOnLoginButton();
